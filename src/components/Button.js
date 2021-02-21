@@ -17,10 +17,8 @@ import '../App.css';
  *
  */
 const Button = (props) => (
-  <button className='btn-success, btn' type='success'>
-    <p>
-      <span>Add list</span>
-    </p>
+  <button className='btn-success, btn' onClick={props.clicked}>
+    <span>{props.text}</span>
   </button>
 );
 
