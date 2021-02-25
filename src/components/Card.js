@@ -27,9 +27,11 @@ import Tag from './Tag';
  * --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
  */
 const Card = (props) => {
+  let tags = [];
+
   return (
     <Draggable draggableId={props.id} index={props.index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
           className='card'
           ref={provided.innerRef}
@@ -37,9 +39,11 @@ const Card = (props) => {
           {...provided.dragHandleProps}
         >
           {/* render tags list */}
-          <li>
-            <Tag tags={props.tags} />
-          </li>
+          <div style={{ marginBottom: '5px' }}>
+            {tags.map((tag, i) => (
+              <Tag key={i} text={tag} />
+            ))}
+          </div>
           {/* render card number and description */}
           <p>{props.number}</p>
           <p>{props.description}</p>
