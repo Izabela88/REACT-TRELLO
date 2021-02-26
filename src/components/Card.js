@@ -27,7 +27,7 @@ import Tag from './Tag';
  * --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
  */
 const Card = (props) => {
-  let tags = [];
+  const tags = [];
 
   return (
     <Draggable draggableId={props.id} index={props.index}>

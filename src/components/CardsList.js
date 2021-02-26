@@ -18,51 +18,51 @@ import Form from './Form';
  * - Should render a <div> element as the container for the card
  * - Should render the tags list at the top of the card content
  * - Should render the card number and description below the tags
- * 
+ *
  * Tips:
  * - You can use the 'card' CSS class for styling
- * 
- */ 
+ *
+ */
 class CardsList extends Component {
   constructor(props) {
     super(props);
 
     // CardsList state
-    this.state = { 
+    this.state = {
       creatingNewCard: false,
       editCardId: null,
       editCardText: '',
-      editCardTags: []
+      editCardTags: [],
     };
 
     // TODO: Define all the card actions here
     this.actions = [
       [
-        { 
+        {
           title: 'Add Card...',
-          onClick: () => null // TODO
+          onClick: () => null, // TODO
         },
-        { 
+        {
           title: 'Copy List...',
-          onClick: () => null // TODO
-        }
+          onClick: () => null, // TODO
+        },
       ],
       [
         {
           title: 'Move All Cards in This List...',
-          onClick: () => null // TODO
+          onClick: () => null, // TODO
         },
         {
           title: 'Archive All Cards in This List...',
-          onClick: () => null // TODO
+          onClick: () => null, // TODO
         },
       ],
       [
         {
           title: 'Archive This List',
-          onClick: () => null // TODO
-        }
-      ]
+          onClick: () => null, // TODO
+        },
+      ],
     ];
 
     // TODO: Bind your class methods here
@@ -136,12 +136,14 @@ class CardsList extends Component {
   // (using the dragHandleProps)
   renderHeader() {
     return (
-      <div className="cards-list-header">
-        <div className="cards-list-title">
-          { /* render the list title */ }
-          { /* render the Menu component */ }
+      <div className='cards-list-header'>
+        <div className='cards-list-title'>
+          {/* render the list title */}
+
+          {/* render the Menu component */}
+          <Menu />
         </div>
-        { /* render the number of cards in this list */ }
+        {/* render the number of cards in this list */}
       </div>
     );
   }
@@ -159,11 +161,7 @@ class CardsList extends Component {
   // - Add the children function that returns your cards and bind everything together
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderCards() {
-    return (
-      <ol className="cards">
-        { /* render the cards */ }
-      </ol>
-    );
+    return <ol className='cards'>{/* render the cards */}</ol>;
   }
 
   // TODO: implement the renderFooter method to render the list footer UI.
@@ -183,15 +181,15 @@ class CardsList extends Component {
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
   render() {
     return (
-      <div className="cards-list">
-        { /* render list header */ }
-        { /* render cards */ }
-        { /* render list footer */ }
-        { /* render card editor */ }
+      <div className='cards-list'>
+        {/* render list header */}
+        {/* render cards */}
+        {/* render list footer */}
+        {/* render card editor */}
       </div>
     );
   }
-};
+}
 
 CardsList.defaultProps = {
   cards: null,
@@ -206,7 +204,7 @@ CardsList.defaultProps = {
   onCopyCard: () => null,
   onEditCard: () => null,
   onRemoveTag: () => null,
-  onAddTag: () => null
+  onAddTag: () => null,
 };
 
 CardsList.propTypes = {
@@ -218,7 +216,7 @@ CardsList.propTypes = {
       id: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
       description: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string)
+      tags: PropTypes.arrayOf(PropTypes.string),
     })
   ),
   isMenuOpen: PropTypes.bool,
@@ -232,7 +230,7 @@ CardsList.propTypes = {
   onCopyCard: PropTypes.func,
   onEditCard: PropTypes.func,
   onRemoveTag: PropTypes.func,
-  onAddTag: PropTypes.func
+  onAddTag: PropTypes.func,
 };
 
 export default CardsList;

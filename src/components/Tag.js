@@ -16,13 +16,7 @@ import '../App.css';
  */
 const Tag = (props) => {
   if (props.text) {
-    return (
-      <>
-        <p>
-          <span className='tag'>{props.text}</span>
-        </p>
-      </>
-    );
+    return <span className='tag'>{props.text}</span>;
   }
   return null;
 };
