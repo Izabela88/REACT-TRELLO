@@ -33,7 +33,7 @@ const Menu = (props) => {
         <Popover title='List Actions' onClickOutside={props.onClick}>
           {actions.map((action, i) => (
             <div key={i}>
-              <ul className='manu-actions'>
+              <ul className='menu-actions'>
                 {action.map((props, index) => (
                   <li
                     className='menu-action'
